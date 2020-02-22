@@ -1,0 +1,22 @@
+  <!-- As a heading -->
+
+<h1>list of cocktails</h1>
+  <div class="container" >
+    <div class="row">
+
+    <% @cocktails.each do |cocktail| %>
+      <div class="col-4">
+        <img class="card-img-top" src="..." alt="">
+            <h5 class="card-title"><%= cocktail.name %></h5>
+              <p class="card-text"></p>
+                <%= link_to("Check details 🍉", new_cocktail_path) %>
+      </div>
+    <% end %>
+    </div>
+  </div>
+  <div class="button-container">
+      <%= link_to("Add Cocktail 🍉", new_cocktail_path) %>
+
+ </div>
+
+
