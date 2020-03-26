@@ -1,1 +1,12 @@
-new.html.erb
+<h1>New Dose</h1>
+<div class="container">
+<%= simple_form_for [@cocktail, @dose] do |f| %>
+  <%= f.input :description %>
+  <%= f.association :ingredients %>
+  <%= f.submit "Add ingredient", class: "btn btn-outline-primary" %>
+<% end %>
+
+</div>
+<div class="container">
+  <%= link_to 'Back', @cocktail %>
+</div>

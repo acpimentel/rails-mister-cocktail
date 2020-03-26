@@ -1,22 +1,24 @@
   <!-- As a heading -->
-
-<h1>list of cocktails</h1>
-  <div class="container" >
-    <div class="row">
-
-    <% @cocktails.each do |cocktail| %>
-      <div class="col-4">
-        <img class="card-img-top" src="..." alt="">
-            <h5 class="card-title"><%= cocktail.name %></h5>
-              <p class="card-text"></p>
-                <%= link_to("Check details 🍉", new_cocktail_path) %>
-      </div>
-    <% end %>
+<div class="container">
+  <div class="row text-center mt-4 mb-3">
+    <div class="col">
+    <h1>The Handmaid's Tail</h1>
     </div>
   </div>
-  <div class="button-container">
-      <%= link_to("Add Cocktail 🍉", new_cocktail_path) %>
-
- </div>
-
+    <div class="row">
+      <% @cocktails.each do |cocktail| %>
+        <div class="col-4">
+          <img class="card-img-top" src="https://images.unsplash.com/photo-1527762055594-4956c0c8c617?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80" alt="">
+          <h5 class="card-title"><%= cocktail.name %></h5>
+          <p class="card-text"></p>
+          <div class="btn btn-light">
+        <%= link_to("Check details", cocktail_path(cocktail)) %>
+      </div>
+      </div>
+      <% end %>
+      </div>
+<div class="btn btn-dark">
+  <%= link_to("Add Cocktail", new_cocktail_path) %>
+</div>
+</div>
 
