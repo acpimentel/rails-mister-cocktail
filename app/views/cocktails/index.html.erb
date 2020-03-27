@@ -1,24 +1,13 @@
   <!-- As a heading -->
 <div class="container">
-  <div class="row text-center mt-4 mb-3">
-    <div class="col">
-    <h1>The Handmaid's Tail</h1>
-    </div>
-  </div>
     <div class="row">
       <% @cocktails.each do |cocktail| %>
-        <div class="col-4">
-          <img class="card-img-top" src="https://images.unsplash.com/photo-1527762055594-4956c0c8c617?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80" alt="">
-          <h5 class="card-title"><%= cocktail.name %></h5>
+        <div class="col-4 ps-cocktails">
+          <img class="card-category align-middle align-items-center" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))" src="https://images.unsplash.com/photo-1527762055594-4956c0c8c617?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80" alt="">
+          <h5 class="card-title"> <%= cocktail.name %> </h5>
           <p class="card-text"></p>
-          <div class="btn btn-light">
-        <%= link_to("Check details", cocktail_path(cocktail)) %>
+        <%= link_to "Check details", cocktail_path(cocktail), class: "btn btn-dark" %>
       </div>
-      </div>
-      <% end %>
-      </div>
-<div class="btn btn-dark">
-  <%= link_to("Add Cocktail", new_cocktail_path) %>
+    <% end %>
+    </div>
 </div>
-</div>
-
