@@ -1,13 +1,17 @@
   <!-- As a heading -->
 <div class="container">
-    <div class="row">
-      <% @cocktails.each do |cocktail| %>
-        <div class="col-4 ps-cocktails">
-          <img class="card-category align-middle align-items-center" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))" src="https://images.unsplash.com/photo-1527762055594-4956c0c8c617?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80" alt="">
-          <h5 class="card-title"> <%= cocktail.name %> </h5>
-          <p class="card-text"></p>
-        <%= link_to "Check details", cocktail_path(cocktail), class: "btn btn-dark" %>
+  <div class="row cocktails-items">
+    <% @cocktails.each do |cocktail| %>
+      <div class="col-2 ps-cocktails">
+        <div class="card-show">
+        <% if cocktail.photo.attached? %>
+        <%= cl_image_tag cocktail.photo.key%>
+        <% else %>
+        <% end %>
+        <h5 class="card-title"> <%= cocktail.name %> </h5>
+        </div>
       </div>
+    <%= link_to "Check details", cocktail_path(cocktail), class: "btn btn-dark" %>
     <% end %>
-    </div>
+  </div>
 </div>

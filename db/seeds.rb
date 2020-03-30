@@ -1,5 +1,8 @@
 puts "Destroying all ingredients"
+puts "Destroying all cocktails"
+
 Ingredient.destroy_all
+Cocktail.destroy_all
 
 puts "Here's the ingredients:"
 
@@ -25,6 +28,5 @@ Ingredient.create(name: "lime")
 Ingredient.create(name: "salt")
 Ingredient.create(name: "waterlemon")
 Ingredient.create(name: "uisky")
-
 
 puts "Done!"

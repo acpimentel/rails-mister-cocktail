@@ -1,21 +1,18 @@
-<div class="container">
-  <div class="row text-center justify-content-center mt-4 mb-3">
-    <div class="col-4 h1-s">
-      <h1>Create your cocktail</h1>
+<div class="container mt-5">
+  <div class="row cocktails-items">
+    <div class="col-6">
+      <h1>Create a Cocktail !</h1>
+        <%= simple_form_for(@cocktail) do |f| %>
+          <div class=“form-group”>
+            <%= f.label :name %>
+            <%= f.text_field :name, class: 'form-control' %>
+            <%= f.input :photo, as: :file  %>
+
+
     </div>
-  </div>
-  <div class="row justify-content-center">
-    <div class="col-4">
-      <%= simple_form_for @cocktail do |f| %>
-        <%= f.input :name %>
-        <%= f.input :photo, as: :file, input_html: { multiple: true }  %>
-      <div class="row d-flex justify-content-center pb-2">
-        <%= f.button :submit, class: "btn btn-dark" %>
-      <% end %>
-      </div>
-    <div class="row d-flex justify-content-center pb-2">
-      <%= link_to "Back to the list", cocktails_path, class: "btn btn-dark" %>
-    </div>
-  </div>
-  </div>
+
+      <%= f.submit "Add cocktail", class: 'btn btn-dark' %>
+<%= link_to "Back to the list", cocktails_path, class: "btn btn-dark" %>
+
+  <% end %>
 </div>
