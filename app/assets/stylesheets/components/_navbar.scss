@@ -1,8 +1,6 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
-  border-bottom: 2px solid #000;
-
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -19,4 +17,23 @@
 
 .navbar-light .navbar-nav .nav-link {
   color:black;
+}
+
+// a.nav-link {
+//   color: #497f0b;
+// }
+
+
+.header-title {
+  font-size:25px;
+  color:#cb2d6f;
+  // text-decoration:underline;
+}
+
+#icon {
+  font-size:25px;
+  font-weight: italic;
+  // color:#501f3a;
+  // color:#ffbbb4;
+  color:#cb2d6f;
 }

@@ -1,0 +1,48 @@
+h2 {
+  color:#497f0b;
+}
+
+img {
+  width: 100%;
+  border-radius:5px;
+  margin-bottom:20px;
+}
+
+h5.show-new-ingre {
+  font-size: 25px;
+}
+
+
+
+table, th, td {
+  border-collapse: collapse;
+}
+
+th, td {
+  // padding: 5px;
+  text-align: center;
+}
+
+.add-ingredient-form .form-control {
+    display:inline-block;
+    width:auto;
+}
+
+.add-ingredient-form label {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  margin-right: 15px;
+  width: 100px;
+}
+
+.add-ingredient-form .option-value {
+  width:100px;
+}
+
+.add-ingredient-form .form-group {
+  text-align:left;
+}
+
+.add-ingredient-form .form-control {
+  width: calc(100% - 135px);
+}
