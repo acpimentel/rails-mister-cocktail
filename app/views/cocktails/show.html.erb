@@ -1,50 +1,40 @@
-<div class="container mt-5">
-  <div class="row cocktails-items">
-    <div class="col-4">
+<div class="container mt-5 text-center">
+  <h2 class="mb-4 mt-5"> <%= @cocktail.name %> Cocktail</h2>
+  <div class="row">
+    <div class="col-6 col-md-3">
       <img src="<%= cl_image_path @cocktail.photo.key %>" alt="">
-      </div>
-        <div class="col-4">
-          <h5><%= @cocktail.name %> Cocktail</h5>
-            <ul class="list-group">
-            <table style="width:100%">
-              <tr>
-                <th>Ingredient</th>
-                <th>Description</th>
-                <th>Action</th>
-              </tr>
-              <% @cocktail.doses.each do |dose| %>
-              <tr>
-                <td><li class="list-group-item"><%= dose.ingredient.name %></li></td>
-                <td><li class="list-group-item"><%= dose.description %></li></td>
-                <td><li class="list-group-item">
-                <%= link_to dose_path(dose), data: { confirm: "Are you sure?" }, :method => :delete do %>
-                <i class="fas fa-trash-alt"></i>
-                <% end %>
-                </li>
-                </td>
-                </td>
-              </tr>
-              <% end %>
-            </table>
-            </ul>
-          <br>
-        </div>
-      <div class="col-4">
-        <h5>Add ingredients to your cocktail</h5>
-        <br>
-        <%= simple_form_for [@cocktail, @dose] do |f| %>
-        <%= f.association :ingredient, prompt: "Choose one" %>
-        <%= f.input :description, as: :string %>
-        <%= f.submit "Add an ingredient", class: "btn btn-dark" %>
-        <% end %>
-      </div>
-        <div class="container mt-3">
-          <%= link_to 'Back', cocktails_path, class: "btn btn-dark" %>
-        </div>
     </div>
+    <div class="col-6 col-md-4">
+      <div class="table-responsive">
+        <table class="table table-bordered"style="width:100%">
+          <thead>
+            <tr>
+              <th>Ingredient</th>
+              <th>Description</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @cocktail.doses.each do |dose| %>
+            <tr>
+              <td><%= dose.ingredient.name %></td>
+              <td><%= dose.description %></td>
+              <td><%= link_to dose_path(dose), data: { confirm: "Are you sure?" }, :method => :delete do %>
+                <i class="fas fa-trash-alt"></i>
+              <% end %></td>
+            </tr>
+              <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="col-6 col-md-5 add-ingredient-form">
+
+      <%= render "doses/new" %>
+
+      <div class="mt-3" align="center">
+        <%= link_to 'Back to list', cocktails_path, class: "btn btn-dark" %>
+      </div>
+    </div>
+  </div>
 </div>
-
-
-
-
-

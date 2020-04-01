@@ -1,18 +1,24 @@
 <div class="container mt-5">
-  <div class="row cocktails-items">
-    <div class="col-6">
-      <h1>Create a Cocktail !</h1>
-        <%= simple_form_for(@cocktail) do |f| %>
-          <div class=“form-group”>
-            <%= f.label :name %>
-            <%= f.text_field :name, class: 'form-control' %>
-            <%= f.input :photo, as: :file  %>
-
-
+  <div class="row justify-content-center">
+    <div class="col-8" align="center" id="new-cocktail">
+      <h5>Create your cocktail</h5>
     </div>
-
-      <%= f.submit "Add cocktail", class: 'btn btn-dark' %>
-<%= link_to "Back to the list", cocktails_path, class: "btn btn-dark" %>
-
-  <% end %>
+  </div>
+  <div class="row justify-content-center nestum">
+    <div class="col-4">
+      <%= simple_form_for(@cocktail) do |f| %>
+        <div class=“form-group”>
+          <%= f.input :name %>
+          <%= f.input :photo, as: :file  %>
+          <div class="btn-one" align="center">
+          <%= f.button :submit, class: 'btn btn-dark' %>
+        </div>
+      <% end %>
+          <div class="btn-two" align="center">
+      <%= link_to "Back to the list", cocktails_path, class: "btn btn-dark" %>
+        </div>
+    </div>
+    </div>
+  </div>
 </div>
+  </div>
