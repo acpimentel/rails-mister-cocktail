@@ -11,7 +11,6 @@ body {
   background-color:white;
 }
 
-
 .ps-cocktails {
   position:relative;
   margin-top:40px;
@@ -29,7 +28,6 @@ body {
 }
 
 .ps-cocktails img {
-  width: auto;
   height: 460px;
 }
 
@@ -44,18 +42,25 @@ h5.card-title {
 }
 
 
-.ps-cocktails .btn-dark {
+@media only screen and (max-width: 600px) {
+  .ps-cocktails img {
+    height: 300px;
+  }
+
+  h5.card-title {
+    font-size: 20px;
+  }
 }
 
-// h5 #cocktail-name {
-//   background-color:#1c33477a;
-//   font-color:white;
-//   border:1px solid none;
-//   padding-right: 10px;
-//   padding-left: 10px;
-//   height: 200px;
-//   width: 100%;
-// }
+@media only screen and (max-width: 420px) {
+  .ps-cocktails img {
+    height: 200px;
+  }
+
+  h5.card-title {
+    font-size: 20px;
+  }
+}
 
 
 
